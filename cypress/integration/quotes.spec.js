@@ -70,7 +70,7 @@ describe('Adding a new quote', () => {
   })
 })
 
-describe('editing an existing quote', () => {
+describe('Editing an existing quote', () => {
   it('can navigate to the site', () => {
     cy.visit('http://localhost:1234')
     cy.url().should('include', 'localhost')
@@ -95,7 +95,7 @@ describe('editing an existing quote', () => {
 
   it('can delete newly edited quote', () => {
     cy.contains('Use Postman for realz (Gabriel Cabrejas)')
-    cy.contains('Use Postman for realz (Gabriel Cabrejas)')
-      .siblings('button:nth-of-type(2)').click()
+    cy.contains('Use Postman for realz (Gabriel Cabrejas)').next().next().click()
+    cy.contains('Use Postman for realz (Gabriel Cabrejas)').should('not.exist')
   })
 })
