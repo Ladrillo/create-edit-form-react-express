@@ -1,4 +1,4 @@
-describe('Quotes Form Inputs', () => {
+describe('Inputs and submit button', () => {
   it('can navigate to the site', () => {
     cy.visit('http://localhost:1234')
     cy.url().should('include', 'localhost')
@@ -43,6 +43,30 @@ describe('Quotes Form Inputs', () => {
   it('button is back to being disabled', () => {
     cy.get('button#submitBtn')
       .should('be.disabled')
+  })
+})
+
+
+describe('Adding a new quote', () => {
+  it('can navigate to the site', () => {
+    cy.visit('http://localhost:1234')
+    cy.url().should('include', 'localhost')
+  })
+
+  it('can submit a new quote', () => {
+    cy.get('input[name="text"]')
+      .type('Have fun!')
+
+    cy.get('input[name="author"]')
+      .type('Gabe')
+
+    cy.get('button#submitBtn').click()
+    cy.contains('Have fun!')
+  })
+
+  it('can delete newly created quote', () => {
+    cy.contains('Have fun!').siblings('button:nth-of-type(2)').click()
+    cy.contains('Have fun!').should('not.exist')
   })
 })
 
