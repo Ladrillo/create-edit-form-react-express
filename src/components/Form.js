@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function Form(props) {
-
   const {
     values,
     setValues,
@@ -16,14 +15,13 @@ export default function Form(props) {
 
   const onSubmit = evt => {
     evt.preventDefault()
-    if (values.id) {
-      putQuote(values)
-    } else {
-      postQuote({ text: values.text, author: values.author })
-    }
+    values.id
+      ? putQuote(values)
+      : postQuote({ text: values.text, author: values.author })
   }
 
   const onChange = evt => {
+    // pull these out of the event to avoid the `persist()`
     const { name, value } = evt.target
     setValues({ ...values, [name]: value })
   }

@@ -63,7 +63,7 @@ export default function Container() {
     setFormValues({ ...quote })
   }
 
-  const handleError = err => { debugger }
+  const handleError = err => { debugger } // eslint-disable-line
 
   const resetForm = () => setFormValues(initialFormState)
 
@@ -73,7 +73,8 @@ export default function Container() {
   useEffect(() => getQuotes(), [])
 
   return (
-    <div className='quotes'>
+    <div className='container'>
+      <h3>Quotes</h3>
       <ul>
         {
           quotes.map(q => (
