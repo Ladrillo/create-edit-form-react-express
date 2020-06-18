@@ -55,6 +55,9 @@ function replaceQuoteById(req, res) {
   res.json(updatedQuote)
 }
 
+////////////// ENDPOINTS //////////////
+////////////// ENDPOINTS //////////////
+////////////// ENDPOINTS //////////////
 app.get('/api/quotes', getAllQuotes)
 app.get('/api/quotes/:id', getQuoteById)
 app.post('/api/quotes', postNewQuote)
