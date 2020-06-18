@@ -20,7 +20,7 @@ let quotes = [
   {
     id: uuid(),
     author: 'Oscar Wilde',
-    text: "Be yourself everyone else is already taken.",
+    text: "Be yourself, everyone else is already taken.",
   },
 ]
 

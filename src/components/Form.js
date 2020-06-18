@@ -32,7 +32,7 @@ export default function Form(props) {
 
   return (
     <form onSubmit={onSubmit}>
-      <h3>{values.id ? 'Edit' : 'Create New'} Quote</h3>
+      <h3>{values.id ? 'Edit' : 'Add New'} Quote</h3>
       <input
         name='text'
         type='text'
