@@ -8,6 +8,9 @@ export default function Form(props) {
     submitHandlers: { postQuote, putQuote },
   } = props
 
+  ////////////// EVENT HANDLERS //////////////
+  ////////////// EVENT HANDLERS //////////////
+  ////////////// EVENT HANDLERS //////////////
   const onCancel = evt => {
     evt.preventDefault()
     reset()
@@ -26,6 +29,9 @@ export default function Form(props) {
     setValues({ ...values, [name]: value })
   }
 
+  ////////////// HELPER //////////////
+  ////////////// HELPER //////////////
+  ////////////// HELPER //////////////
   const isDisabled = () => {
     return !values.text.trim() || !values.author.trim()
   }
