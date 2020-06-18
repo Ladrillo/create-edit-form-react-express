@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel src/index.html",
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,18 @@
   "bugs": {
     "url": "https://github.com/Ladrillo/create-edit-form-react-express/issues"
   },
-  "homepage": "https://github.com/Ladrillo/create-edit-form-react-express#readme"
+  "homepage": "https://github.com/Ladrillo/create-edit-form-react-express#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "uuid": "^8.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-plugin-react": "^7.20.0",
+    "parcel-bundler": "^1.12.4"
+  }
 }
