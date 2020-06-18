@@ -17,7 +17,7 @@ export default function Form(props) {
     evt.preventDefault()
     values.id
       ? putQuote(values)
-      : postQuote({ text: values.text, author: values.author })
+      : postQuote(values)
   }
 
   const onChange = evt => {
