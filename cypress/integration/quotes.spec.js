@@ -70,36 +70,32 @@ describe('Adding a new quote', () => {
   })
 })
 
-// context('Creating and deleting a new friend', () => {
-//   it('can navigate to the site', () => {
-//     cy.visit('http://localhost:1234')
-//   })
+describe('editing an existing quote', () => {
+  it('can navigate to the site', () => {
+    cy.visit('http://localhost:1234')
+    cy.url().should('include', 'localhost')
+  })
 
-//   it('can create a new friend', () => {
-//     cy.get('input[name="username"]')
-//       .type('Lady Gaga')
+  it('can submit a new quote', () => {
+    cy.get('input[name="text"]').type('Use Postman')
+    cy.get('input[name="author"]').type('Gabriel')
+    cy.get('button#submitBtn').click()
+  })
 
-//     cy.get('input[name="email"]')
-//       .type('lady@gaga.com')
+  it('can edit newly created quote', () => {
+    cy.contains('Use Postman').siblings('button:nth-of-type(1)').click()
+    cy.get('input[name="text"]').should('have.value', 'Use Postman')
+    cy.get('input[name="author"]').should('have.value', 'Gabriel')
 
-//     cy.get('select[name="role"]')
-//       .select('Instructor')
+    cy.get('input[name="text"]').type(' for realz')
+    cy.get('input[name="author"]').type(' Cabrejas')
 
-//     cy.get('button.submit').click()
+    cy.get('button#submitBtn').click()
+  })
 
-//     cy.get('.friend h2').contains('Lady Gaga')
-//     cy.get('.friend p').contains('Email: lady@gaga.com')
-//     cy.get('.friend p').contains('Role: Instructor')
-//   })
-
-//   it('can delete the new Friend', () => {
-//     cy.get('.friend p').contains('Email: lady@gaga.com').next().next().click()
-//     cy.get('.friend h2').contains('Lady Gaga').should('not.exist')
-//     cy.get('.friend p').contains('Email: lady@gaga.com').should('not.exist')
-//   })
-
-//   it('can delete the existing Friend', () => {
-//     cy.get('.friend h2').contains('Michael').next().next().next().click()
-//     cy.contains('Michael').should('not.exist')
-//   })
-// })
+  it('can delete newly edited quote', () => {
+    cy.contains('Use Postman for realz (Gabriel Cabrejas)')
+    cy.contains('Use Postman for realz (Gabriel Cabrejas)')
+      .siblings('button:nth-of-type(2)').click()
+  })
+})
