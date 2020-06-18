@@ -1,23 +1,16 @@
 {
-  "name": "create-edit-form-react-express",
+  "name": "web-guided-project-cypress-solution",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
-    "server": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ladrillo/create-edit-form-react-express.git"
+    "server": "node server.js",
+    "test": "cypress open"
   },
   "keywords": [],
   "author": "Gabriel Cabrejas",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Ladrillo/create-edit-form-react-express/issues"
-  },
-  "homepage": "https://github.com/Ladrillo/create-edit-form-react-express#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "cors": "^2.8.5",
@@ -27,6 +20,7 @@
     "uuid": "^8.1.0"
   },
   "devDependencies": {
+    "cypress": "^4.8.0",
     "eslint": "^7.2.0",
     "eslint-plugin-react": "^7.20.0",
     "less": "^3.11.3",
