@@ -53,10 +53,10 @@ export default function Form(props) {
         onChange={onChange}
         placeholder='Enter author'
       />
-      <button id='cancelBtn' onClick={onCancel}>Cancel</button>
-      <button id='submitBtn' onClick={onSubmit} disabled={isDisabled()}>
+      <button id='submitBtn' disabled={isDisabled()}>
         Submit {values.id ? 'Changes' : 'Quote'}
       </button>
+      <button id='cancelBtn' onClick={onCancel}>Cancel</button>
     </form>
   )
 }
