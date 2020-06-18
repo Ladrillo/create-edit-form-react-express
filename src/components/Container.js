@@ -80,8 +80,8 @@ export default function Container() {
           quotes.map(q => (
             <li key={q.id}>
               <div>{q.text} ({q.author})</div>
-              <button onClick={() => editQuote(q.id)}>edit</button>
-              <button onClick={() => deleteQuote(q.id)}>del</button>
+              <button onClick={() => editQuote(q.id)}>Edit</button>
+              <button onClick={() => deleteQuote(q.id)}>Delete</button>
             </li>
           ))
         }

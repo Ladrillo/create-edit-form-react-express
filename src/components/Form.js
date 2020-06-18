@@ -38,15 +38,15 @@ export default function Form(props) {
         type='text'
         value={values.text}
         onChange={onChange}
-        placeholder='enter text'
+        placeholder='Enter text'
       />
       <input
-        placeholder='enter author'
+        placeholder='Enter author'
         name='author' type='text'
         value={values.author}
         onChange={onChange}
       />
-      <button onClick={onCancel}>cancel</button>
+      <button onClick={onCancel}>Cancel</button>
       <button onClick={onSubmit} disabled={isDisabled()}>
         Submit {values.id ? 'Changes' : 'Quote'}
       </button>
